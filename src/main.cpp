@@ -16,7 +16,7 @@ int main(int argc, char** argv)
         port = std::stoul(argv[1]);
         bulk_size = std::stoul(argv[2]);
 
-    } catch(...)git 
+    } catch(...)
     {
         std::cout << "example bulk_server <port> <bulk_size>\nport - uint16_t\nbulk_size - uint32_t" << std::endl;
         return 0;
