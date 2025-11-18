@@ -21,7 +21,14 @@ int main(int argc, char** argv)
         std::cout << "example bulk_server <port> <bulk_size>\nport - uint16_t\nbulk_size - uint32_t" << std::endl;
         return 0;
     }
-
-    Server server(port, bulk_size);
-    return server.run();
+    try
+    {
+        Server server(port, bulk_size);
+        return server.run();
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return 0;
+    }
 }

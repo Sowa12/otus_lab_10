@@ -18,9 +18,15 @@ void Server::push(const std::string &str)
 
 int Server::run()
 {
-    start_accept();
-    start_timer();
-    return io.run();
+    try
+    {
+        start_accept();
+        start_timer();
+        return io.run();
+    } catch(...)
+    {
+        throw;
+    }
 }
 
 void Server::start_accept()
